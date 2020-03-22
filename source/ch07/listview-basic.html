@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>jQuery Mobile</title>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+	<div data-role="page" id="page1" data-title="첫번째 페이지">
+		<div data-role="header">
+			<a href="#page2" class="ui-btn-right">페이지2</a>
+			<h1>페이지 1</h1>
+		</div>
+		<div data-role="content">
+			<ul data-role="listview" data-inset="true">
+				<li data-role="listdivider">메뉴 제목</li>
+				<li><a href="#page2">페이지2</a></li>
+				<li><a href="#page3">페이지3</a></li>
+			</ul>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<a href="#page1">페이지1</a>
+			<a href="#page2">페이지2</a>
+			<a href="#page3">페이지3</a>					
+		</div>
+	</div>
+	<div data-role="page" id="page2" data-title="두번째 페이지">
+		<div data-role="header" data-add-back-btn="true">
+			<h1>페이지 2</h1>
+			<a href="#page3" data-icon="home" class="ui-btn-right">페이지3</a>
+		</div>
+		<div data-role="content">
+			<ul data-role="listview">
+				<li data-role="list-divider">분리자
+					 <p class="ui-li-aside">2014/09/01</p>
+				</li>
+				<li>
+					<a href="#">
+						<img src="listimg.png">
+						<h3>쿵푸펜더</h3>
+						<p>등급: 12세관람가</p>
+						<p>상영시간: 95분</p>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="listimg.png">
+						<h3>쿵푸펜더</h3>
+						<p>등급: 12세관람가</p>
+						<p>상영시간: 95분</p>
+					</a>
+				</li>
+				<li data-role="list-divider">분리자
+					 <p class="ui-li-aside">2014/09/01</p>
+				</li>
+				<li>
+					<a href="#">
+						<img src="listimg.png">
+						<h3>쿵푸펜더</h3>
+						<p>등급: 12세관람가</p>
+						<p>상영시간: 95분</p>				
+						<p class="ui-li-aside">추가설명1</p>
+						<span class="ui-li-count">5</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div data-role="footer" class="ui-bar" data-position="fixed">
+			<div data-role="controlgroup" data-type="horizontal">
+				<a href="#page1">페이지1</a>
+				<a href="#page2">페이지2</a>
+				<a href="#page3">페이지3</a>				
+			</div>	
+		</div>
+	</div>
+	<div data-role="page" id="page3" data-title="세번째 페이지">
+		<div data-role="header" data-add-back-btn="true">
+			<h1>페이지 3</h1>
+			<a href="#page1" data-icon="home" class="ui-btn-right">홈</a>
+		</div>
+		<div data-role="content">
+			<ul data-role="listview">
+				<li data-role="list-divider">분리자
+					 <p class="ui-li-aside">2013/12/01</p>
+				</li>	
+				<li>
+					<a href="#">
+						<img class="ui-li-icon" src="listicon2.png">
+						<h3>6PM</h3>		
+						<span class="ui-li-aside">생일파티</span>
+						<span class="ui-li-count">10</span>
+					</a>					
+				</li>
+				<li>
+					<a href="#">
+						<img class="ui-li-icon" src="listicon2.png">
+						<h3>6PM</h3>		
+						<span class="ui-li-count">10</span>
+					</a>					
+				</li>				
+			</ul>		
+		</div>
+		<div data-role="footer" class="ui-bar" data-position="fixed">
+			<div data-role="controlgroup" data-type="horizontal">
+				<a href="#page1">페이지1</a>
+				<a href="#page2">페이지2</a>
+				<a href="#page3">페이지3</a>						
+			</div>
+		</div>
+	</div>			
+</body>
+</html>
