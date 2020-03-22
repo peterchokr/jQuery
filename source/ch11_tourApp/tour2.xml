@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- (tour2.xml) -->
+<attractionlist>
+	<attraction country="미국">
+		<name>자유의여신상</name>
+		<location>뉴욕</location>
+		<picture>pic1.png</picture>
+	</attraction>
+	<attraction country="이탈리아">
+		<name>콜롯세움</name>
+		<location>로마</location>
+		<picture>pic2.png</picture>		
+	</attraction>		
+	<attraction country="영국">
+		<name>런던아이</name>
+		<location>런던</location>
+		<picture>pic3.png</picture>		
+	</attraction>
+	<attraction country="프랑스">
+		<name>에펠탑</name>
+		<location>파리</location>
+		<picture>pic4.png</picture>		
+	</attraction>			
+</attractionlist>	

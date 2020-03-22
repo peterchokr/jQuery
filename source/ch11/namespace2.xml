@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?> 
+<deptinfo xmlns="http://www.good.ac.kr/2014/xmlns/department">	
+	<department>
+		<dno>001</dno>
+		<name>컴퓨터학과</name>
+		<professor>박인우</professor>
+		<st:student xmlns:st="http://www.good.ac.kr/2014/xmlns/student">	
+			<st:sno>001</st:sno>
+			<st:name>홍길동</st:name>
+			<st:age>25세</st:age>
+		</st:student>
+	</department>
+</deptinfo>	
+
+

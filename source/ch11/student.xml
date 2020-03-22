@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet type="text/css" href="student2.css"?>
+<studentinfo>
+	<student_heading>
+		<major>전공</major>		
+		<name>이름</name>
+		<age>나이</age>
+		<gender>성별</gender>
+	</student_heading>
+	<student>
+		<major>컴퓨터학과</major>
+		<name>홍길동</name>
+		<age>25세</age>
+		<gender>남</gender>
+	</student>
+	<student>
+		<major>철학과</major>
+		<name>홍리라</name>
+		<age>21세</age>
+		<gender>여</gender>
+	</student>
+</studentinfo>
+

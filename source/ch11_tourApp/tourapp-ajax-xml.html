@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>jQuery</title>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script>
+	var count=0;             // 전체 레코드 개수를 위한 전역 변수
+	var Doc;                 // XML 문서 DOM 복합 객체 참조를 위한 전역 변수
+	$(document).ready( function() {  
+		$.ajax({
+			url: 'tour1.xml',  // url: 'tour2.xml',
+			type: 'get',
+			dataType: 'xml',
+			timeout: 1000,
+			success: function(xmlDoc) {
+				Doc=xmlDoc;						  // 전역변수 초기화		
+				count = $(xmlDoc).find('attraction').size();
+				displayTour();					  // 여행지 정보를 표시	
+			}, 
+			error: function() {
+				$('body').html('<div>Error!!</div>');
+			}
+		});
+	});			
+
+	// 관광지 정보를 리스트뷰로 표시			
+	function displayTour() {
+	    var i, tagList='', country='', name='', location='';       
+		tagList = '<li data-role="list-divider">관광지 목록</li>';
+	      if(count > 0) {
+	        for( i = 0; i < count; i += 1) {	
+	    	   	$record = $(Doc).find('attraction').eq(i);
+				tagList += '<li><a href="#"><img src="' + $record.find('picture').text() + '">';              					
+				tagList += '<p class="ui-li-aside">' + $record.attr('country') + '</p>';
+				tagList += '<h2>' + $record.find('name').text() + '</h2>';
+				tagList += '<p>지역 : ' + $record.find('location').text() + '</p></a></li>';
+	        }
+	      }
+	    $('#attractionListArea').html(tagList);
+	    $('#attractionListArea').listview('refresh');
+	}	
+</script>		
+</head>
+<body>
+	<div data-role="page">
+		<div data-role="header">
+			<h1>세계 유명관광지 안내</h1>
+		</div>
+		<div data-role="content">			
+			<ul data-role="listview" id="attractionListArea" data-divider-theme="b">
+			</ul>
+		</div>	
+		<div data-role="footer" data-position="fixed">
+			<h4>월드 관광</h4>
+		</div>
+	</div>
+</body>
+</html>

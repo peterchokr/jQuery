@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?> 					<!-- XML 문서 선언 -->
+<!DOCTYPE productinfo SYSTEM "product.dtd">   				<!-- XML 구조 선언 -->
+<?xml-stylesheet type="text/css" href="product.css"?>		<!-- 스타일 문서 선언 -->
+<productinfo>												<!-- 최상위 엘리먼트 시작 -->
+	<product id="001">										<!-- 속성 -->
+		<name>갤럭시S5</name>
+		<company>삼성</company>
+		<price>980,000</price>
+	</product>
+	<product id="002">										<!-- 상위 엘리먼트-->
+		<name>G3</name>										<!-- 하위 엘리먼트 -->
+		<company>LG</company>
+		<price>880,000</price>
+	</product>
+</productinfo>												<!-- 최상위 엘리먼트 종료 -->
+

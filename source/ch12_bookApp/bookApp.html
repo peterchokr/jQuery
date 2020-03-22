@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="initial-scale=1.0, width=device-width">
+	<title>도서 관리</title>
+
+<!-- 제이쿼리 모바일, 제이쿼리 라이브러리 파일 -->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<!-- 사용자 정의 자바스크립트 파일 -->
+<script src="dbHandle.js"></script>
+<script>
+	$(document).ready( function() {
+		// DB 연결
+		openDB();  
+		createTable();   
+		// 이벤트 함수 정의
+	 	$('#submit1').click( function() {
+	 		insertBook();
+		});
+		$('#cancel1').click( function() {
+			$('#bookType1').val('미정').attr('selected', 'selected'); 
+			$('#bookType1').selectmenu('refresh');	
+		}); 	
+		$('#search2').click( function() {
+		  var name = $('#sBookName2').val();
+		  selectBook2(name);
+		});
+		$('#submit2').click( function() {
+		  updateBook();
+		});
+		$('#cancel2').click( function() {
+			$('#bookType2').val('미정').attr('selected', 'selected'); 
+			$('#bookType2').selectmenu('refresh');	
+		}); 		
+		$('#search3').click( function() {
+		  var name = $('#sBookName3').val();
+		  selectBook3(name);
+		});
+		$('#submit3').click( function() {
+		  deleteBook();
+		});
+		$('#search4').click( function() {
+		  var name = $('#sBookName4').val();
+		  selectBook4(name);
+		});
+		
+		$('#first').click( function() {
+		  position='first'; 
+		  listBook();
+		});    
+		$('#prev').click( function() {
+		  position='prev'; 
+		  listBook();
+		});    
+		$('#next').click( function() {
+		  position='next'; 
+		  listBook();
+		});    
+		$('#last').click( function() {
+		  position='last'; 
+		  	listBook();
+		});  
+	});    
+</script>
+<style type="text/css">
+  img { padding:10px; margin:10px 50px; }
+  .gap { padding-top : 15px; padding-bottom: 30px; }
+</style>	
+</head>  
+<body>
+
+<!-- 시작 화면 -->
+  <div data-role="page" id="page0">
+	<div data-role="header" data-position="fixed" data-theme="b">
+		<h1>도서 정보 관리</h1>
+		<a href="#page0" data-icon="home" data-iconpos="notext" class="ui-btn-right">Home</a>
+	</div>
+	<div data-role="content">
+		<img src="book.jpg">
+		<ul data-role="listview" data-inset="true">
+			<li><a href="#page1">도서 정보 추가</a></li>
+			<li><a href="#page2">도서 정보 갱신</a></li>
+			<li><a href="#page3">도서 정보 삭제</a></li>
+			<li><a href="#page4">전체 도서 조회</a></li>
+		</ul>
+	</div>
+	<div data-role="footer" data-position="fixed" data-theme="b">
+		<h4>Book n Book Library</h4>
+    </div>
+  </div>
+
+ <!-- 도서정보 추가 화면 --> 
+  <div data-role="page" id="page1">
+	<div data-role="header" data-position="fixed" data-theme="b">
+		<a href="#" data-icon="back" data-rel="back" data-direction="reverse">Back</a>
+		<h1>도서 정보</h1>
+		<a href="#page0" data-icon="home" data-iconpos="notext">Home</a>
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#page1">입력</a></li>
+				<li><a href="#page2">수정</a></li>
+				<li><a href="#page3">삭제</a></li>
+				<li><a href="#page4">전체검색</a></li>
+			</ul>
+		</div>
+	</div>
+	<div data-role="content">
+		<form name="form1">  
+			<h3>도서 내용 입력</h3>
+			<div class="ui-body ui-body-a gap">
+				<label for="bookType1" class="select">장르:</label>
+				<select name="bookType1" id="bookType1" data-native-menu="false" data-mini="true" data-inline="true">
+					<option vlaue="미정">미정</option>
+					<option value="경제">경제</option>
+					<option value="시사">시사</option>
+					<option value="문학">문학</option>
+					<option value="기술">기술</option>
+				</select>
+				<label for="BookName1">도서명:</label>
+				<input type="text" name="bookName1" id="bookName1" value="" data-mini="true"/>
+            </div>
+			<div class="ui-body">
+				<fieldset class="ui-grid-a">
+					<div class="ui-block-a">
+	              	<input type="reset" id="cancel1" value="취소"/>
+					</div>
+					<div class="ui-block-b">
+	              	<input type="button" id="submit1" value="추가"/>
+					</div>
+				</fieldset>
+			</div>
+		</form> 
+	</div>
+	<div data-role="footer" data-position="fixed" data-theme="b">
+		<h4>Book n Book Library</h4>
+    </div>
+  </div>
+
+ <!-- 도서정보 갱신 화면 --> 
+  <div data-role="page" id="page2">
+	<div data-role="header" data-position="fixed" data-theme="b">
+		<a href="#" data-icon="back" data-rel="back" data-direction="reverse">Back</a>
+		<h1>도서 정보</h1>
+		<a href="#page0" data-icon="home" data-iconpos="notext">Home</a>
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#page1">입력</a></li>
+				<li><a href="#page2">수정</a></li>
+				<li><a href="#page3">삭제</a></li>
+				<li><a href="#page4">전체검색</a></li>
+			</ul>
+		</div>
+	</div>
+	<div data-role="content"> 
+		<form name="form2">  
+			<h3>도서 내용 수정</h3>
+			<div class="ui-body ui-body-a gap">	
+				<label for="sBookName2">검색도서명:</label>
+				<input type="search" name="sBookName2" id="sBookName2" value="" data-mini="true"/>
+				<label for="bookType2" class="select">장르:</label>
+				<select name="bookType2" id="bookType2" data-native-menu="false" data-mini="true" data-inline="true">
+					<option vlaue="미정">미정</option>
+					<option value="경제">경제</option>
+					<option value="시사">시사</option>
+					<option value="문학">문학</option>
+					<option value="기술">기술</option>
+				</select>	
+				 <label for="bookName2">도서명:</label>
+				 <input type="text" name="bookName2" id="bookName2" value="" data-mini="true"  />
+            </div>
+			<div class="ui-body">
+				<fieldset class="ui-grid-b">
+					<div class="ui-block-a">
+    	                <input type="reset" id="cancel2" value="취소"/>
+					</div>
+					<div class="ui-block-b">
+		                <input type="button" id="submit2" value="수정"/>
+					</div>
+					<div class="ui-block-c">
+		                <input type="button" id="search2" value="검색"/>
+					</div>
+				</fieldset>
+			</div>
+		</form> 
+	</div>
+	<div data-role="footer" data-position="fixed" data-theme="b">
+		<h4>Book n Book Library</h4>
+    </div>
+  </div>
+  
+<!-- 도서정보 삭제 화면 -->
+  <div data-role="page" id="page3">
+	<div data-role="header" data-position="fixed" data-theme="b">
+		<a href="#" data-icon="back" data-rel="back" data-direction="reverse">Back</a>
+		<h1>도서 정보</h1>
+		<a href="#page0" data-icon="home" data-iconpos="notext">Home</a>
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#page1">입력</a></li>
+				<li><a href="#page2">수정</a></li>
+				<li><a href="#page3">삭제</a></li>
+				<li><a href="#page4">전체검색</a></li>
+			</ul>
+		</div>
+	</div>
+	<div data-role="content">
+		<form name="form3">  
+			<h3>도서 내용 삭제</h3>
+			<div class="ui-body ui-body-a gap">
+				<label for="sBookName3">검색도서명:</label>
+				<input type="search" name="sBookName3" id="sBookName3" value="" data-mini="true" />
+				<label for="bookType3">장르:</label>
+				<input type="text" name="bookType3" id="bookType3" value="" data-mini="true"/>
+				<label for="bookName3" >도서명:</label>
+				<input type="text" name="bookName3" id="bookName3" value="" data-mini="true"  />
+			</div>
+			<div class="ui-body">
+				<fieldset class="ui-grid-b">
+					<div class="ui-block-a">
+                 	<input type="reset" id="cancel3" value="취소"/>
+					</div>
+					<div class="ui-block-b">
+                    <input type="button" id="submit3" value="삭제"/>
+					</div>
+					<div class="ui-block-c">
+                    <input type="button" id="search3" value="검색"/>
+					</div>
+				</fieldset>
+			</div>
+		</form> 
+	</div>
+	<div data-role="footer" data-position="fixed" data-theme="b">
+		<h4>Book n Book Library</h4>
+    </div>
+  </div>
+  
+<!-- 전체 도서조회 화면 -->
+  <div data-role="page" id="page4">
+	<div data-role="header" data-position="fixed" data-theme="b">
+		<a href="#" data-icon="back" data-rel="back" data-direction="reverse">Back</a>
+		<h1>도서 정보</h1>
+		<a href="#page0" data-icon="home" data-iconpos="notext">Home</a>
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#page1">입력</a></li>
+				<li><a href="#page2">수정</a></li>
+				<li><a href="#page3">삭제</a></li>
+				<li><a href="#page4">전체검색</a></li>
+			</ul>
+		</div>
+	</div>
+	<div data-role="content">
+		<h3>도서 내용 검색</h3>
+		<div class="ui-body ui-body-a gap">
+			<fieldset data-role="controlgroup" data-type="horizontal" style="text-align:right">
+            	<input type="button" id="first" value="|<"/>
+                <input type="button" id="prev" value="<"/>
+                <input type="button" id="next" value=">"/>
+                <input type="button" id="last" value=">|"/>
+            </fieldset>
+			<label for="sBookName4">검색도서명:</label>
+			<input type="search" name="sBookName4" id="sBookName4" value="" data-mini="true" />
+			<label for="bookType4">장르:</label>
+			<input type="text" name="bookType4" id="bookType4" value="" data-mini="true"/>
+			<label for="bookName4">도서명:</label>
+			<input type="text" name="bookName4" id="bookName4" value="" data-mini="true"/>
+        </div>
+		<div class="ui-body">
+			<fieldset class="ui-grid-a">
+				<div class="ui-block-a">
+			       <input type="reset" id="cancel4" value="취소"/>
+				</div>
+				<div class="ui-block-b">
+			       <input type="button" id="search4" value="검색"/>
+				</div>
+			</fieldset>
+		</div>
+	</div>
+	<div data-role="footer" data-position="fixed" data-theme="b">
+		<h4>Book n Book Library</h4>
+    </div>
+  </div>
+</body>
+</html>

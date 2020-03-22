@@ -1,0 +1,8 @@
+department name { display: inline; width: 150px; margin-top: 15px; background-color: gray; 
+color: white; text-align: center;  }
+professor { display: none; }
+student { display: block; width: 300px; border: solid thin gray; text-align: center; }
+sname, age { display: inline; }	
+
+
+

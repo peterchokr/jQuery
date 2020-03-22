@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stuinfo>
+    <student>
+        <gradepoint>1.0 학점</gradepoint> 
+    </student>
+    <student>
+        <gradepoint>2.0 학점</gradepoint> 
+    </student>
+    <student>
+        <gradepoint>3.0 학점</gradepoint> 
+    </student>
+    <student>
+        <gradepoint>4.0 학점</gradepoint> 
+    </student>           
+</stuinfo>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?> 	
+<studentinfo xmlns="http://www.good.ac.kr/2014/xmlns/student">											
+	<student sno="001">									
+		<major>컴퓨터학과</major>
+		<name>홍길동</name>
+		<age>25세</age>
+		<gender>남</gender>
+	</student>
+</studentinfo>
+
+

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?> 
+<deptinfo>	
+	<department dno="001" name="컴퓨터학과" professor="박인우">
+		<student sno="001" name="홍길동" age="25세"></student>
+	</department>
+	<department dno="002"	name="철학과" professor="박현우">
+		<student sno="021" name="홍리라" age="21세"></student>
+		<student sno="022" name="김미선" age="22세">	</student>
+	</department>
+</deptinfo>
+

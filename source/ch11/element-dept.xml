@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?> 
+<deptinfo>	
+	<department>
+		<dno>001</dno>
+		<name>컴퓨터학과</name>
+		<professor>박인우</professor>
+		<student>	
+			<sno>001</sno>
+			<name>홍길동</name>
+			<age>25세</age>
+		</student>
+	</department>
+	<department>
+		<dno>002</dno>
+		<name>철학과</name>
+		<professor>박현우</professor>
+		<student>	
+			<sno>021</sno>	
+			<name>홍리라</name>
+			<age>21세</age>
+		</student>
+		<student>
+			<sno>022</sno>
+			<name>김미선</name>
+			<age>22세</age>
+		</student>
+	</department>
+</deptinfo>	
+

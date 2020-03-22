@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>jQuery</title>
+
+   <!-- 제이쿼리 모바일, 제이쿼리 라이브러리 파일 -->
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+   <!-- jqPlot 기본 라이브러리 파일 -->
+<link rel="stylesheet" href="jqplot/jquery.jqplot.min.css"/>
+<script src="jqplot/jquery.jqplot.min.js"></script>
+
+   <!-- jqPlot 바차트 플러그인 파일 -->
+<script src="jqplot/plugins/jqplot.barRenderer.min.js"></script>
+   <!-- jqPlot 카테고리(바 표시) 플러그인 파일 -->
+<script src="jqplot/plugins/jqplot.categoryAxisRenderer.min.js"></script>
+   <!-- jqPlot x축, y축 라벨 표시 플러그인 파일 -->
+<script src="jqplot/plugins/jqplot.canvasTextRenderer.min.js"></script>
+<script src="jqplot/plugins/jqplot.canvasAxisLabelRenderer.min.js"></script>
+   <!-- jqPlot 포인트 라벨 표시 플러그인 파일 -->
+<script src="jqplot/plugins/jqplot.pointLabels.min.js"></script>
+
+<script>
+   $(document).ready(function(){
+        var s1 = [20, 40, 60, 30];
+        var s2 = [50, 10, 30, 40];      
+        var ticks = ['1학년', '2학년', '3학년', '4학년'];
+   	
+        plot1 = $.jqplot('chartdiv', [s1, s2], {
+            title: '막대 그래프 예제2',
+            seriesDefaults: {
+                renderer: $.jqplot.BarRenderer,
+                pointLabels: { show: true},
+                shadowAngle: 135,
+                rendererOptions: {
+                    barDirection: 'horizontal'
+                },
+            },    
+            series: [
+            	{ label: '남학생' },
+            	{ label: '여학생' }
+            ],    
+            legend: {
+                show: true,
+                placement: 'outside'
+            },            
+            axes: {
+                yaxis: {
+                    renderer: $.jqplot.CategoryAxisRenderer,
+                    ticks: ticks                    
+                }
+            }
+        });
+    });
+</script>    
+     
+</head>
+<body>
+<div data-role="page">
+   <div data-role="header">
+	<h1>header영역</h1>
+   </div>
+   <div data-role="content">
+	<div id="chartdiv" style="height: 400px; width: 300px;">
+     		<!-- 차트 표시 영역 -->
+	</div>
+   </div>
+   <div data-role="footer" data-position="fixed">
+      <h4>footer영역</h4>
+   </div>
+</div>
+</body>
+</html>
+

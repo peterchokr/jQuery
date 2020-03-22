@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- (tour1.xml) -->
+<attractionlist xmlns="http://www.hk.ac.kr/2014/xmlns/tour">
+	<attraction country="미국">
+		<name>자유의여신상</name>
+		<location>뉴욕</location>
+		<picture>pic1.png</picture>
+	</attraction>		
+</attractionlist>	
