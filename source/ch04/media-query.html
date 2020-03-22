@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>	
+<head>
+	<meta charset="utf-8">	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>	
+	<title>미디어 쿼리 정의</title>
+	<style>
+		@media only screen and (max-width: 320px) {
+			* { background: limegreen; color: white; }
+		}
+		@media only screen and (min-width: 321px) and (orientation: portrait) {  /* 세로보기모드 */
+			* { background: lightyellow; color: black; }
+		}
+		@media only screen and (min-width: 321px) and (orientation: landscape) { /* 가로보기모드 */
+			* { background: purple; color: white; }
+		}
+         h1 { font-size : 48px; }
+		h2 { font-size : 24px; }
+	</style>
+</head>
+<body>
+	<h1>미디어 쿼리</h1>
+	<h2>반응형 웹에 대한 예</h2>
+</body>
+</html>
