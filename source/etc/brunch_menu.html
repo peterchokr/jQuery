@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+    span {
+      border: solid 1px gray;
+      padding: 5px;
+      margin: 5px;
+    }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function () {
+            //선택한 메뉴가 브런치/런치 인지에 따라 출력하도록.
+            //12시 이전에는 브런치 메뉴가 가능
+            //12시 이후에는 런치 메뉴가 가능
+            var sum = "";
+            $('span').click(function () {
+                var x = new Date();
+
+                if ($(this).is('.a')) {
+                    if (x.getHours() < 12)
+                        sum = sum + $(this).text() + "    ";
+                    else
+                        alert("브런치 메뉴는 12시 이전에만 주문가능합니다.");
+                }
+                else {
+                    if ($(this).is('.b')) {
+                        if (x.getHours() >= 12)
+                            sum = sum + $(this).text() + "    ";
+                        else
+                            alert("런치 메뉴는 12시 이후에 주문가능합니다.");
+                    }
+                }
+                $('#out').text(sum);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>영이공 카페</h1>
+    <h2>브런치</h2>
+    <div><span class="a">샌드위치</span><span class="a">베이글</span></div>
+    <h2>런치</h2>
+    <div><span class="b">햄버거</span><span class="b">스파게티</span><span class="b">스테이크</span></div>
+    <h2>선택한 메뉴 : </h2>
+    <h4 id="out"></h4>
+    <div></div>
+</body>
