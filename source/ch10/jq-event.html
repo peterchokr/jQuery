@@ -10,7 +10,7 @@
 </style>
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script>
-	$(document).ready( function() {  
+	$(document).ready( function() {
 
 		// focus/blur 이벤트
 		$('input').focus(function() {
@@ -20,21 +20,16 @@
 				$(this).css('background-color', 'white');
 		});
 
-		// click 이벤트								
+		// click 이벤트
 		$('div').bind('click', function() {
-			$(this).width($(this).width() * 1.5);	
-			$(this).height($(this).height() * 1.5);	
-		}); 				
+			$(this).width($(this).width() * 1.5);
+			$(this).height($(this).height() * 1.5);
+		});
 
 		// toggle 이벤트
-		$('img').toggle(
-			function() {
-				$(this).css('opacity','0.5');
-			},
-			function() {
-				$(this).css('opacity','1.0');
-			}
-		);	
+		$('div').click(function() {
+				$('img').toggle(4000);
+			});
 	});
 </script>
 </head>
