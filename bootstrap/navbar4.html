@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>부트스트랩 내비게이션 바</title>
+    <!-- 부트스트랩 css -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<style>
+	@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);	
+	@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+	
+	body {
+		font-family: "Helvetica Nenu", 'Nanum Gothic', Helvetica, Arial;
+	}		
+
+		.jumbotron  {								
+			background:#636363;
+			color:white;			
+			padding-bottom:0;
+		}
+		.jumbotron  .col-lg-2 {
+			font-weight:bold;
+		}
+		.jumbotron  .col-lg-2 > h1{
+			font-family: 'Montserrat', sans-serif;
+			font-size:6em;
+			font-weight:bold;
+		}		
+		.jumbotron .col-lg-6 > h2 {
+			color:#F5FC1E;
+			font-weight:bold;
+		}
+		.jumbotron .col-lg-6 > p {
+			font-size:1em;
+		}		
+		.jumbotron .col-lg-4 ul {
+			list-style:none;
+			margin-top:50px;
+		}
+		.jumbotron .col-lg-4 li{
+			margin-top:10px;			
+			padding:5px 30px 5px 10px ;
+			background:#3B3016;
+			color : FFF0CC;
+		}
+	</style>
+  </head>
+  <body>
+	<div class="mymenu">
+		<nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="http://www.easyspub.com" class="navbar-brand easysLogo">이지스퍼블리싱</a>
+			</div>
+			
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="#">공지사항</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">도서 목록 <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Do It! 시리즈</a></li>
+							<li><a href="#">업무 능력 필독서</a></li>
+							<li><a href="#">사진 시리즈</a></li>
+							<li><a href="#">바빠 학습법 시리즈</a></li>
+						</ul>
+					</li>
+					<li><a href="#">게시판</a></li>
+					<li><a href="#">자료실</a></li>
+				</ul>
+				<ul class="nav nav-bar navbar-right">
+					<li><a href="#">로그인</a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+	
+	<div class="container">
+		<div class="jumbotron">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-2">
+						<h4>세상의 속도를 따라잡고 싶다면</h4>
+						<h1>Do it!</h1>
+					</div>
+					<div class="col-lg-6">
+						<h2>IT 독자들에게 검증된 Do it! 시리즈</h2>
+						<h2>선택의 이유는 분명합니다</h2>
+						<p>"Do it!에서 나오는 책은 그냥 믿음이 갑니다. 좋은 책을 읽을 수 있다는게 아주 행복합니다." - <small>마스코트님</small></p>
+						<p>"Do it! 시리즈 완전 좋아합니다. 유튜브에 강의가 있어 어느 순간부터 Do it! 시리즈만 구입하고 있습니다." - <small>나는 손꾸락님</small></p>
+						<p><a class="btn btn-warning">자세히 보기</a></p>
+					</div>
+					<div class="col-lg-4">
+						<ul>
+							<li>전국 대학의 IT학과 인기 교재</li>
+							<li>무료 동영상 강좌</li>
+							<li>입문자의 입장으로 만든 책 </li>
+							<li>전문가의 노하우가 담겼다!</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>	
+		
+		<div class="row intro-text">
+			<div class="col-lg-3 col-sm-6">
+				<h3>IT 도서 - 자바, 스위프트, 파이썬, R 등 저자를 찾습니다</h3>
+				<p>IT 도서 저자를 찾습니다 세상의 속도를 따라가고 싶은 독자들을 위해 필요한 정보를 <b>체계적이고, 구체적으로</b> 알려줄 분이라면 어떤 분이라도 좋습니다....</p>
+				<p><a class="btn btn-primary" href="http://easyspub.com/%eb%8f%84%ec%84%9c-%ec%9e%90%eb%b0%94-%ec%8a%a4%ec%9c%84%ed%94%84%ed%8a%b8-%ed%8c%8c%ec%9d%b4%ec%84%a0-r-%eb%93%b1-%ec%a0%80%ec%9e%90%eb%a5%bc-%ec%b0%be%ec%8a%b5%eb%8b%88%eb%8b%a4/">더보기</a></p>
+			</div>
+			<div class="col-lg-3 col-sm-6">
+				<h3>Do it! HTML5+CSS3 웹 표준의 정석(최종 표준안 반영판) PDF 받아가세요</h3>
+				<p>Do it! HTML5+CSS3 웹 표준의 정석 – HTML5 최종 표준안 반영판이 출시되었습니다.  W3C에서 마지막으로 확정된 태그 내용을 pdf로 공개해 드립니다. ...</p>
+				<p><a class="btn btn-primary btn-sm" href="http://easyspub.com/html5css3-%ec%9b%b9-%ed%91%9c%ec%a4%80%ec%9d%98-%ec%a0%95%ec%84%9d-%ec%b5%9c%ec%a2%85-%ed%91%9c%ec%a4%80%ec%95%88-%eb%b0%98%ec%98%81%ed%8c%90-pdf-%eb%b0%9b%ec%95%84%ea%b0%80%ec%84%b8/">더보기</a></p>			
+			</div>
+			<div class="col-lg-3 col-sm-6">
+				<h3>바쁜 초등학생을 위한 빠른 연산법, 영문법 카페 안내</h3>
+				<p>바쁜 초등학생을 위한 빠른 학습법에 대한 정보를 찾는 분들은 이지스 에듀 카페를 방문해 주세요. 이지스 에듀는 이지스 퍼블리싱의 교육 브랜드입니다. 이지스 에듀: 교육, 학습도서 easyspub.co.kr   ...</p>
+				<p><a class="btn btn-primary btn-sm" href="http://easyspub.com/%eb%b0%94%ec%81%9c-%ec%b4%88%eb%93%b1%ed%95%99%ec%83%9d%ec%9d%84-%ec%9c%84%ed%95%9c-%eb%b9%a0%eb%a5%b8-%ec%97%b0%ec%82%b0%eb%b2%95-%ec%98%81%eb%ac%b8%eb%b2%95-%ec%b9%b4%ed%8e%98-%ec%95%88%eb%82%b4/">더보기</a></p>			
+			</div>			
+			<div class="col-lg-3 col-sm-6">
+				<h3>Do it! 안드로이드 - 개정2판(롤리팝, 안드로이드 스튜디오) PDF 받아가세요</h3>
+				<p>Do it! 안드로이드 앱 프로그래밍 – 개정 2판이 출시되었습니다. 개정 2판 책 pdf 중 주요 부분(2,3장)을 공개해 드립니다. 2015년 1월 이전의 구판을 가지고 ... </p>
+				<p><a class="btn btn-primary btn-sm" href="http://easyspub.com/%ec%95%88%eb%93%9c%eb%a1%9c%ec%9d%b4%eb%93%9c-%ea%b0%9c%ec%a0%95-2%ed%8c%90%eb%a1%a4%eb%a6%ac%ed%8c%9d-%ec%95%88%eb%93%9c%eb%a1%9c%ec%9d%b4%eb%93%9c-%ec%8a%a4%ed%8a%9c%eb%94%94%ec%98%a4-pd/">더보기</a></p>
+			</div>			
+		</div>
+		
+		<div class="row intro-img">
+			<div class="col-lg-4">
+				<div class="thumbnail">
+					<img style="width:300px; height:200px" src="images/top-book1.png" alt="두 잇! 아이폰 앱 프로그래밍 개정판">
+					<div class="caption">
+						<h3>Do it! 아이폰 앱 프로그래밍<개정판> </h3>
+						<p><a href="http://easyspub.com/%EC%95%84%EC%9D%B4%ED%8F%B0/">간단한 앱부터 중고급 앱까지 직접 만들면서 배운다! Xcode 가이드부터 앱스토어 등록까지 전 과정을 한눈에!  </a></p>	
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div class="thumbnail">
+					<img style="width:300px; height:200px" src="images/top-book2.png" alt="빅데이터의 다음 단계는 예측 분석이다">
+					<div class="caption">
+						<h3>빅데이터의 다음 단계는 예측 분석이다 </h3>
+						<p><a href="http://easyspub.com/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%98-%EB%8B%A4%EC%9D%8C-%EB%8B%A8%EA%B3%84%EB%8A%94-%EC%98%88%EC%B8%A1-%EB%B6%84%EC%84%9D%EC%9D%B4%EB%8B%A4/">이제 예측 분석의 키워드를 이해하는 기업만 살아남는다! 미국 논픽션 어워드 2014 금상 수상 도서! </a></p>					
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div class="thumbnail">
+					<img style="width:300px; height:200px" src="images/top-book3.png" alt="데이터 과학 어떻게 기업을 바꾸었나?">
+					<div class="caption">
+						<h3>데이터 과학 어떻게 기업을 바꾸었나?</h3>
+						<p><a href="http://easyspub.com/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EA%B3%BC%ED%95%99-%EC%96%B4%EB%96%BB%EA%B2%8C-%EA%B8%B0%EC%97%85%EC%9D%84-%EB%B0%94%EA%BE%B8%EC%97%88%EB%82%98/">액시엄 출신 한국인 데이터 과학자가 알려주는 데이터 과학 컨설팅 사례 </a></p>	
+					</div>
+				</div>
+			</div>			
+		</div>
+	</div>
+
+	</div>
+	
+	 <!-- jQuery 포함 -->
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <!-- 부트스트랩 플러그인 포함 -->
+    <script src="js/bootstrap.min.js"></script> 
+		
+	<!-- HTML5와 미디어쿼리를 지원하지 않는 IE8 이하 버전을 위해 -->
+	<!-- [if lt IE 9]>
+		<script src="html5shiv/html5shiv.min.js">
+		<script src="respond/respond.min.js">
+	<![endif]-->
+  </body>
+</html>

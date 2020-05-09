@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>부트스트랩 그리드 시스템</title>
+	<style>
+	@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+	@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+	body {
+		font-family: "Helvetica Nenu", 'Nanum Gothic', Helvetica, Arial;
+	}
+		.intro  {
+			margin-top:50px;
+			background:#636363;
+			color:white;
+			padding-bottom:0;
+		}
+		.intro  .header {
+			font-weight:bold;
+		}
+		.intro  .header > h1{
+			font-family: 'Montserrat', sans-serif;
+			font-size:6em;
+			font-weight:700;
+		}
+		.intro .detail > h2 {
+			color:#F5FC1E;
+			font-weight:bold;
+		}
+		.intro .detail > p {
+			font-size:1em;
+		}
+		.intro .list ul {
+			list-style:none;
+			margin-top:50px;
+		}
+		.intro .list li{
+			margin-top:10px;
+			padding:5px 30px 5px 10px ;
+			background:#3B3016;
+			color : FFF0CC;
+		}
+	</style>
+    <!-- 부트스트랩 css -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- HTML5와 미디어쿼리를 지원하지 않는 IE8 이하 버전을 위해 -->
+	<!-- [if lt IE 9]>
+		<script src="html5shiv/html5shiv.min.js">
+		<script src="respond/respond.min.js">
+	<![endif]-->
+  </head>
+  <body>
+		<div class="intro">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-2 header">
+						<h4>세상의 속도를 따라잡고 싶다면</h4>
+						<h1>Do it!</h1>
+					</div>
+					<div class="col-lg-6 detail col-lg-push-4">
+						<h2>IT 독자들에게 검증된 Do it! 시리즈</h2>
+						<h2>선택의 이유는 분명합니다</h2>
+						<p>"Do it!에서 나오는 책은 그냥 믿음이 갑니다. 좋은 책을 읽을 수 있다는게 아주 행복합니다." - <small>마스코트님</small></p>
+						<p>"Do it! 시리즈 완전 좋아합니다. 유튜브에 강의가 있어 어느 순간부터 Do it! 시리즈만 구입하고 있습니다." - <small>나는 손꾸락님</small></p>
+						<p><a class="btn btn-warning">자세히 보기</a></p>
+					</div>
+					<div class="col-lg-4 list col-lg-pull-6">
+						<ul>
+							<li>전국 대학의 IT 인기 교재</li>
+							<li>무료 동영상 강좌</li>
+							<li>입문자의 입장으로 만든 책 </li>
+							<li>전문가의 노하우가 담겼다!</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+  </body>
+</html>
