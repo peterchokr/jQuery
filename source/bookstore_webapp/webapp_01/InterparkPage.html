@@ -1,0 +1,250 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <style>
+  body *{
+    font-family: 'HYSinMyeongJo';
+}
+#price{
+color:red; width:36%; float:left;
+}
+#disrate{
+  width:30%; font-size:14px; display: inline-block;
+  vertical-align: middle;
+}
+  </style>
+</head>
+<body>
+
+
+<!-- 인터파크 베스트셀러 페이지 -->
+<div data-role="page" id="yes24page">
+  <div data-role="header" data-direction="reverse" data-position="fixed">
+    <div style="text-align:center;"><img src="logo\interpark.png" style="max-width: 250px;"></div>
+    <a href="index.html" data-ajax="false"><img src="logo\home.png" style="max-width: 20px;"></a>
+  </div>
+  <div data-role="content">
+    <div data-role="tabs">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#interparktab1"><div>종합</div></a></li>
+          <li><a href="#interparktab2"><div>소설</div></a></li>
+          <li><a href="#interparktab3"><div>아동</div></a></li>
+          <li><a href="#interparktab4"><div>인문</div></a></li>
+        </ul>
+      </div>
+
+      <br><br>
+
+    <ul data-role="listview" id="interparktab1">
+  <!-- 인터파크 페이지의 종합 부분 -->
+      <li>
+        <a href="http://mbook.interpark.com/shop/product/detail?prdNo=331101607" target="_blank">
+          <img src="bookpic\interpark1-1.jpg" style="max-width:80px; max-height:80px;">
+          <h3>1. 더 해빙 The Having</h3>
+          <p>이서윤, 홍주연 공저</p>
+          <div id="price">14,400원</div>
+          <div id="disrate"><p>(10%)</p></div>
+        </a>
+      </li>
+      <li>
+        <a href="http://mbook.interpark.com/shop/product/detail?prdNo=332958393" target="_blank">
+          <img src="bookpic\interpark1-2.jpg" alt="">
+          <h3>2. 기억1</h3>
+          <p>베르나르 베르베르 저/전미역 역</p>
+          <div id="price">13,320원</div>
+          <div id="disrate"><p>(10%)</p></div>
+        </a>
+      </li>
+      <li>
+        <a href="http://mbook.interpark.com/shop/product/detail?prdNo=332991373" target="_blank">
+          <img src="bookpic\interpark1-3.jpg" alt="">
+          <h3>3. 애쓰지 않고 편안하게</h3>
+          <p>김수현 글/그림</p>
+          <div id="price">13,500원</div>
+          <div id="disrate"><p>(10%)</p></div>
+        </a>
+      </li>
+      <li>
+        <a href="http://mbook.interpark.com/shop/product/detail?prdNo=332958285" target="_blank">
+          <img src="bookpic\interpark1-4.jpg" alt="">
+          <h3>4. 코로나 투자 전쟁</h3>
+          <p>정채진, 박석중, 이광수, 김한진, 김일구, 여의도클라스, 윤지호, 최준영 공저</p>
+          <div id="price">15,120원</div>
+          <div id="disrate"><p>(10%)</p></div>
+        </a>
+      </li>
+      <li>
+        <a href="http://mbook.interpark.com/shop/product/detail?prdNo=332958395" target="_blank">
+          <img src="bookpic\interpark1-5.jpg" alt="">
+          <h3>5. 기억2</h3>
+          <p>베르나르 베르베르 저/전미연 역</p>
+          <div id="price">13,320원</div>
+          <div id="disrate"><p>(10%)</p></div>
+        </a>
+      </li>
+    </ul>
+
+<!-- 인터파크 페이지의 소설 -->
+<ul data-role="listview" id="interparktab2">
+      <li>
+        <a href="http://mbook.interpark.com/shop/product/detail?prdNo=332958285" target="_blank">
+          <img src="bookpic\interpark2-1.jpg" alt="">
+          <h3>1. 기억1</h3>
+          <p>베르나르 베르베르 저/전미연 역</p>
+          <div id="price">13,320원</div>
+          <div id="disrate"><p>(10%)</p></div>
+        </a>
+      </li>
+      <li>
+        <a href="http://mbook.interpark.com/shop/product/detail?prdNo=332958395" target="_blank">
+          <img src="bookpic\interpark2-2.jpg" alt="">
+          <h3>2. 기억2</h3>
+          <p>베르나르 베르베르 저/전미연 역</p>
+          <div id="price">13,320원</div>
+          <div id="disrate"><p>(10%)</p></div>
+        </a>
+      </li>
+      <li>
+        <a href="http://mbook.interpark.com/shop/product/detail?prdNo=332785980" target="_blank">
+          <img src="bookpic\interpark2-3.jpg" alt="">
+          <h3>3. 소년이 온다(특별한정판)</h3>
+          <p>한강 저</p>
+          <div id="price">11,700원</div>
+          <div id="disrate"><p>(10%)</p></div>
+        </a>
+      </li>
+      <li>
+        <a href="http://mbook.interpark.com/shop/product/detail?prdNo=332116261" target="_blank">
+          <img src="bookpic\interpark2-4.jpg" alt="">
+          <h3>4. 한중록</h3>
+          <p>혜경궁 홍씨 저/신동운 역</p>
+          <div id="price">10,800원</div>
+          <div id="disrate"><p>(10%)</p></div>
+        </a>
+      </li>
+      <li>
+        <a href="http://mbook.interpark.com/shop/product/detail?prdNo=333000194" target="_blank">
+          <img src="bookpic\interpark2-5.jpg" alt="">
+          <h3>5. 철도원 삼대</h3>
+          <p>황석영 저</p>
+          <div id="price">10,800원</div>
+          <div id="disrate"><p>(10%)</p></div>
+        </a>
+      </li>
+    </ul>
+
+<!-- 여기서부터는 인터파크 페이지의 아동 부분 -->
+    <ul data-role="listview" id="interparktab3">
+        <li>
+          <a href="http://mbook.interpark.com/shop/product/detail?prdNo=333027338" target="_blank">
+            <img src="bookpic\interpark3-1.jpg" alt="">
+            <h3>1. 마법천자문 48</h3>
+            <p>김현수 글/홍거북 그림</p>
+            <div id="price">10,800원</div>
+            <div id="disrate"><p>(10%)</p></div>
+          </a>
+        </li>
+        <li>
+          <a href="http://mbook.interpark.com/shop/product/detail?prdNo=333019812" target="_blank">
+            <img src="bookpic\interpark3-2.jpg" alt="">
+            <h3>2. Go Go 카카오프렌즈 14</h3>
+            <p>김미영 글/김정한 그림</p>
+            <div id="price">10,800원</div>
+            <div id="disrate"><p>(10%)</p></div>
+          </a>
+        </li>
+        <li>
+          <a href="http://mbook.interpark.com/shop/product/detail?prdNo=332986754" target="_blank">
+            <img src="bookpic\interpark3-3.jpg" alt="">
+            <h3>3. 흔한남매 안 흔한 일기2</h3>
+            <p>흔한남매 원저/강효미 글/조병주 그림/흔한컴퍼니 감수</p>
+            <div id="price">10,800원</div>
+            <div id="disrate"><p>(10%)</p></div>
+          </a>
+        </li>
+        <li>
+          <a href="http://mbook.interpark.com/shop/product/detail?prdNo=332074127" target="_blank">
+            <img src="bookpic\interpark3-4.jpg" alt="">
+            <h3>4. 흔한남매4</h3>
+            <p>흔한남매 원저/백난도 글/유난희 그림/샌드박스네트워크 감수</p>
+            <div id="price">10,800원</div>
+            <div id="disrate"><p>(10%)</p></div>
+          </a>
+        </li>
+        <li>
+          <a href="http://mbook.interpark.com/shop/product/detail?prdNo=332031566" target="_blank">
+            <img src="bookpic\interpark3-5.jpg" alt="">
+            <h3>5. 설민석의 한국사 대모험 13</h3>
+            <p>설민석, 스토리박스 글/정현희 그림</p>
+            <div id="price">10,800원</div>
+            <div id="disrate"><p>(10%)</p></div>
+          </a>
+        </li>
+    </ul>
+
+<!-- 여기서부터 인터파크 페이지의 인문부분     -->
+    <ul data-role="listview" id="interparktab4">
+        <li>
+          <a href="http://mbook.interpark.com/shop/product/detail?prdNo=325808923" target="_blank">
+            <img src="bookpic\interpark4-1.jpg" alt="">
+            <h3>1. 내가 원하는 것을 나도 모를 때</h3>
+            <p>전승환 저</p>
+            <div id="price">14,400원</div>
+            <div id="disrate"><p>(10%)</p></div>
+          </a>
+        </li>
+        <li>
+          <a href="http://mbook.interpark.com/shop/product/detail?prdNo=245939301" target="_blank">
+            <img src="bookpic\interpark4-2.jpg" alt="">
+            <h3>2. 사피엔스</h3>
+            <p>유발 하라리 저/조현욱 역</p>
+            <div id="price">19,800원</div>
+            <div id="disrate"><p>(10%)</p></div>
+          </a>
+        </li>
+        <li>
+          <a href="http://mbook.interpark.com/shop/product/detail?prdNo=332589182" target="_blank">
+            <img src="bookpic\interpark4-3.jpg" alt="">
+            <h3>3. 설민석의 책 읽어드립니다</h3>
+            <p>설민헉 저</p>
+            <div id="price">13,500원</div>
+            <div id="disrate"><p>(10%)</p></div>
+          </a>
+        </li>
+        <li>
+          <a href="http://mbook.interpark.com/shop/product/detail?prdNo=292644896" target="_blank">
+            <img src="bookpic\interpark4-4.jpg" alt="">
+            <h3>4. 당신이 옳다</h3>
+            <p>정혜신 저</p>
+            <div id="price">14,220원</div>
+            <div id="disrate"><p>(10%)</p></div>
+          </a>
+        </li>
+        <li>
+          <a href="http://mbook.interpark.com/shop/product/detail?prdNo=322398501" target="_blank">
+            <img src="bookpic\interpark4-5.jpg" alt="">
+            <h3>5. 지적 대화를 위한 넓고 얕은 지식 제로</h3>
+            <p>채사장 저</p>
+            <div id="price">17,820원</div>
+            <div id="disrate"><p>(10%)</p></div>
+          </a>
+        </li>
+      </ul>
+
+      <!-- </ul> -->
+    </div>
+  </div>
+  <div data-role="footer" data-position="fixed">
+    <h5>1841037 조하린</h5>
+  </div>
+
+</div>
+</body>
+</html>
