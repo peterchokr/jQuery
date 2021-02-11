@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>jQuery Mobile</title>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<body>
+
+<div data-role="page" id="page1" >
+	<div data-role="header" >
+		<h1>header 영역</h1>
+	</div>
+	<div data-role="content" >
+		<div data-role="fieldcontain">
+			<label for="age1">정보습득매체</label>
+			<select name="age1" id="age1" data-native-menu="false" multiple="multiple">
+				<option value=" " data-placeholder="true">선택하세요(복수 선택 가능)</option>						<option value="num1">신문</option>
+				<option value="num2">인터넷</option>
+				<option value="num3">SNS</option>
+				<option value="num4">지인소개 </option>
+				<option value="num5">방송</option>
+			</select>
+		</div>
+	</div>
+	<div data-role="footer" data-position="fixed">
+		<h4>footer 영역</h4>
+	</div>
+</div>
+
+</body>
+</html>
+

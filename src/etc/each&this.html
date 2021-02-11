@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('#jumun').click(function () {
+          var price = 0;
+          $('input:checkbox:checked').each(function() {
+              if ($(this).is('#bull')) {
+                  price += 4000 * x.value;
+              }
+              else if ($(this).is('#cheese')) {
+                  price += 3500 * y.value;
+              }
+              else if ($(this).is('#spicy')) {
+                  price += 4500 * z.value;
+              }
+              else if ($(this).is('#rots')) {
+                  price += 4000 * a.value;
+              }
+              else if ($(this).is('#big')) {
+                  price += 6000 * b.value;
+              }
+              else if ($(this).is('#cocoa')) {
+                  price += 3000 * c.value;
+              }
+              else if ($(this).is('#milk')) {
+                  price += 3000 * d.value;
+              }
+          });
+          $('#out').text(price);
+        })
+      })
+    </script>
+    <style>
+        input{text-align:right;}
+    </style>
+</head>
+<body>
+    <h1>메뉴판</h1><br />
+    <form>
+        <input type="checkbox" id="bull"/>불고기버거<input type="text" size="3" value="0" id="x"/><br />
+        <input type="checkbox" id="cheese"/>치즈버거<input type="text" size="3" value="0" id="y" /><br />
+        <input type="checkbox" id="spicy"/>스파이시버거<input type="text" size="3" value="0" id="z" /><br />
+        <input type="checkbox" id="rots"/>랏츠버거<input type="text" size="3" value="0" id="a"/><br />
+        <input type="checkbox" id="big"/>빅맥<input type="text" size="3" value="0" id="b"/><br />
+        <input type="checkbox" id="cocoa"/>코코아<input type="text" size="3" value="0" id="c"/><br />
+        <input type="checkbox" id="milk"/>우유<input type="text" size="3" value="0" id="d"/><br />
+        <input type="button" id="jumun" value="주문하기" />
+        <input type="reset" value="취소하기" />
+        </form>
+        <div id="out"></div>
+        </body>
+        </html>

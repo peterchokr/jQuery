@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>jQuery Mobile</title>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<div data-role="page">
+	
+    <div data-role="panel" id="panel1" data-display="overlay" data-theme="b">
+        <form>
+            <h3>로그인 패널</h3>
+            <label for="name">사용자명:</label>
+            <input name="name" id="name" type="text" value="" data-mini="true" data-clear-btn="true">
+            <label for="password">비밀번호:</label>
+            <input name="password" id="password" type="password" value="" data-mini="true" data-clear-btn="true">
+            <div class="ui-grid-a">
+                <div class="ui-block-a"><a href="#" data-role="button" data-rel="close">취소</a></div>
+                <div class="ui-block-b"><a href="#" data-role="button" data-rel="close">저장</a></div>
+            </div>
+        </form>
+    </div>
+    
+    <div data-role="panel" id="panel2" data-display="overlay">
+        <ul data-role="listview">
+            <li data-icon="delete"><a href="#" data-rel="close">메뉴 패널 종료</a></li>
+            <li><a href="#">메뉴1</a></li>
+            <li><a href="#">메뉴2</a></li>
+            <li><a href="#">메뉴3</a></li>
+            <li><a href="#">메뉴4</a></li>
+        </ul>
+    </div>
+
+    <div data-role="panel" id="panel3" data-display="overlay" data-position="right">
+        <h3>패널 메모</h3>
+        <p>오른쪽 메모 패널 영역입니다.</p>
+        <a href="#page1" data-role="button" data-rel="close" data-inline="true">패널 종료</a>
+    </div>
+	
+    <div data-role="header">
+	<h1>header영역</h1>
+    </div>
+    <div data-role="content">
+	<a href="#panel1" data-role="button" data-inline="true">로그인 패널</a>
+	<a href="#panel2" data-role="button" data-inline="true">메뉴 패널</a>
+	<a href="#panel3" data-role="button" data-inline="true">메모 패널</a>
+    </div>		 	
+    <div data-role="footer" data-position="fixed">
+	<h4>footer영역</h4>
+    </div>
+</div>
+</body>
+</html>
+

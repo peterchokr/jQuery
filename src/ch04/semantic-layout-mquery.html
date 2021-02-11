@@ -1,0 +1,56 @@
+<!DOCTYPE html>   							
+<html>									
+<head>	
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0"/>		
+		<title>HTML5 페이지 기본 레이아웃</title>
+		<style>			   
+			* { margin: 0px; padding: 5px 0px; }
+			body { font-size : 14px ; width : auto ; height: auto; margin : 0 auto ; } 
+			
+@media only screen and (max-width: 320px) and (orientation: portrait) {      /* 세로 모드 */
+	section { width : 240px ; float : left ; background: #F1DCF2; }
+	aside { width : 75px ; float : right ; background: #E4F2D0; }
+}	
+@media only screen and (min-width: 321px) and (orientation: landscape) {     /* 가로 모드 */
+	section { width: 80%; float: left; background: lavender;}
+	aside { width: 20%; text-align: center; float: right; background: darkviolet; color: white; }
+}	
+
+			#article1 { font-size: 12px; background: silver; margin: 0px 10px; }
+			header { background: #085C3C; color: white; }
+			footer { background: #085C3C; color: white; clear : both ; }
+			nav { background: olivedrab; }
+			h1 { font-size : 11px; }
+			h2 { font-size: 9px ;
+		</style>
+</head>
+<body>
+<header><h1>Header 영역</h1></header>
+<nav><h1>Nav 영역</h1></nav>
+<section id=”section1”>  
+	<h1>Section1 영역</h1>
+	<p>section 태그는 문서 내에서 하나의 제목 중심의 내용들을 그룹화하기 위해 사용한다. 하나의 섹션은 하나의 주제를 가지며 보통 h1~h6 태그 중 하나만을 사용하는 것이 좋다. 하나의 주제 안에 또 다른 세부 주제가 있다면 섹션 안에 다른 섹션이 포함될 수 있다. section 태그 안에 또 다른 section 태그를 포함한 다양한 태그들이 중첩되어 사용될 수 있다.	</p>
+</section>
+<aside><h1>Aside 영역</h1>
+	<p> aside 태그는 페이지 영역 중 주된 내용이 아닌 보조적인 내용을 지정한다. 주로 화면 좌우의 사이드바 역할처럼 section이나 article 태그 영역안의 내용과 관련된 내용을 포함한다. 광고나 즐겨찾기 링크, 관련 이미지 정보 등이 해당된다.</p>
+</aside>
+<section id="section2">
+	<h1>Section2 영역</h1>
+	<p> 내용 구성에 따라 section 태그 안에 article 태그를, 또는 article 태그 안에 section 태그를 포함시킬 수 있다.</p>
+	<article id="article1">
+	<h2>Article1 영역</h2>
+	<p>article 태그는 웹 페이지 안에서의 개별 내용 단위를 지정한다. 보통 article 태그 안의 내용은 포함된 문서와 분리하여 개별적으로 사용이 가능한 독립적인 내용으로 작성된다. 별도로 배포되거나 재사용될 수 있는 내용이 해당된다. 예를 들면, 블로그나 잡지의 기사, 포스트, 스토리처럼 하나의 독립적인 내용 영역이 해당된다. <p>
+	</article>
+</section>
+<footer><h1>Footer 영역</h1></footer>
+</body>
+</html>
+
+
+
+
+
+
+
+

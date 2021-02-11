@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>jQuery Mobile</title>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+	
+<div data-role="page">
+	<div data-role="header">
+		<h1>header영역</h1>
+	</div>
+	<div data-role="content">
+		<p>content영역</p>		
+		<div data-role="tabs">
+			<div data-role="navbar">
+			    <ul>
+			      <li><a href="#tab1">그림1</a></li>
+			      <li><a href="#tab2">그림2</a></li>
+			      <li><a href="#tab3">그림3</a></li>
+			    </ul>
+			</div>
+			<div id="tab1">
+			    <h5>첫번째 그림</h5>
+			    <img src="flower1.jpg">
+			</div>
+			<div id="tab2">
+			    <h5>두번째 그림</h5>
+			    <img src="flower2.jpg">
+			</div>
+			<div id="tab3">
+			    <h5>세번째 그림</h5>
+			    <img src="flower3.jpg">
+			</div>
+		</div>
+	</div>
+	<div data-role="footer" data-position="fixed">
+		<h4>footer영역</h4>
+	</div>
+</div
+
+</body>
+</html>
+
