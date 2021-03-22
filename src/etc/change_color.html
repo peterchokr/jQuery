@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        div {
+            border : 3px solid red;
+            width : 200px;
+            height : 25px;
+            text-align : center;
+        }
+
+        .font_color_black {color : black;}
+        .font_color_orange {color:orange;}
+        .bg_color_yellow {background-color:yellow;}
+        .bg_color_skyblue {background-color:blue;}
+
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        function test()
+        {
+            //글자색과 배경색 변경
+            var c = $('#a > option:selected').val();
+            var bg = $('#b > option:selected').val();
+            
+            $('div').removeClass().addClass(c).addClass(bg);
+        }
+    </script>
+</head>
+<body>
+    <div>jQuery Quiz</div>
+     글자색 선택<br />
+    <select id="a" onchange="test()">
+        <option value="font_color_black">검정</option>
+        <option value="font_color_orange">오렌지</option>
+    </select>
+    <br />
+    배경색 선택<br />
+    <select id="b" onchange="test()">
+        <option value="bg_color_yellow">노란색</option>
+        <option value="bg_color_skyblue">파란색</option>
+    </select>
+</body>
+</html>
