@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+
+    <script>
+        function order() {
+            var output = "</br>주문한 메뉴</br>";
+            var sum = 0;
+            var temp;
+
+            $('input:checkbox').each(function (index, item) {
+                if ($(this).is(':checked')) {
+                    temp = $('#menu' + index).val();
+                    sum += temp * $(this).val();
+                    output += $('#m' + index).text() + temp + "잔" + "<br>"
+                }
+            });
+
+            output += "총 결제 금액 : " + sum + "원"
+
+            $('#result').html(output);
+        }
+    </script>
+</head>
+<body>
+    <div>메뉴</div>
+    <span id="m0"><input type="checkbox" value="2000" />아메리카노(2,000원)</span>
+    <input id="menu0" type="number" min="1" max="50" value="0" />잔<br />
+    <span id="m1"><input type="checkbox" value="2500" />카페라떼(2,500원)</span>
+    <input id="menu1" type="number" min="1" max="50" value="0" />잔<br />
+    <span id="m2"><input type="checkbox" value="2500" />핫초코(2,500원)</span>
+    <input id="menu2" type="number" min="1" max="50" value="0" />잔<br />
+    <span id="m3"><input type="checkbox" value="2800" />카푸치노(2,800원)</span>
+    <input id="menu3" type="number" min="1" max="50" value="0" />잔<br />
+    <input type="button" value="주문하기" onclick="order()">
+    <div id="result"></div>
+</body>
+</html>
