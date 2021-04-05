@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <style>
+        #x, #y, #z, #a, #b, #camp, #clothes {
+            display: none;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('#c0').change(function () {
+                if (this.checked) {
+                    $('div').children().prop('checked', true);
+                    $('#c1, #c2, #c3, #a1, #a2, #camp, #clothes, #t1, #t2').trigger('change');
+                } else {
+                    $('div').children().prop('checked', false);
+                    $('#c1, #c2, #c3, #a1, #a2, #camp, #clothes, #t1, #t2').trigger('change');
+                }
+            })
+            $('#t1').change(function () {
+                if (this.checked) {
+                    $('#camp').css('display', 'block');
+                }
+                else {
+                    $('#camp').css('display', 'none');
+                    $('#camp').children().prop('checked', false);
+                    $('#c1, #c2, #c3').trigger('change');
+                }
+            })
+            $('#t2').change(function () {
+                if (this.checked) {
+                    $('#clothes').css('display', 'block');
+                }
+                else {
+                    $('#clothes').css('display', 'none');
+                    $('#clothes').children().prop('checked', false);
+                    $('#a1, #a2').trigger('change');
+                }
+            })
+            $('#c1').change(function () {
+                if (this.checked) {
+                    $('#x').css('display', 'block');
+                }
+                else {
+                    $('#x').css('display', 'none');
+                }
+            })
+            $('#c2').change(function () {
+                if (this.checked) {
+                    $('#y').css('display', 'block');
+                }
+                else {
+                    $('#y').css('display', 'none');
+                }
+            })
+            $('#c3').change(function () {
+                if (this.checked) {
+                    $('#z').css('display', 'block');
+                }
+                else {
+                    $('#z').css('display', 'none');
+                }
+            })
+            $('#a1').change(function () {
+                if (this.checked) {
+                    $('#a').css('display', 'block');
+                }
+                else {
+                    $('#a').css('display', 'none');
+                }
+            })
+            $('#a2').change(function () {
+                if (this.checked) {
+                    $('#b').css('display', 'block');
+                }
+                else {
+                    $('#b').css('display', 'none');
+                }
+            })
+        });
+
+    </script>
+</head>
+<body>
+    <div><h1>스프츠/레저 쇼핑</h1></div>
+    <input type="checkbox" id="c0" />모두 선택
+    <div>
+      <input type="checkbox" id="t1" />운동 용품
+      <input type="checkbox" id="t2" />의류
+    </div>
+    <div id="camp">
+      <label>운동용품</label><br />
+        <input type="checkbox" id="c1" />캠핑
+        <input type="checkbox" id="c2" />수영
+        <input type="checkbox" id="c3" />자전거
+    </div></br>
+    <div id="clothes">
+      <label>의류</label><br />
+        <input type="checkbox" id="a1" />남성의류
+        <input type="checkbox" id="a2" />여성의류
+    </div>
+
+    <div id="x">
+        <h1>캠핑</h1>
+        텐트</br>
+        그늘막</br>
+        취사용품</br>
+        랜턴</br>
+    </div>
+    <div id="y">
+        <h1>수영</h1>
+        남성수영복</br>
+        여성수영복</br>
+        비치웨어</br>
+        수영용품</br>
+    </div>
+    <div id="z">
+        <h1>자전거</h1>
+        헬멧</br>
+        안장</br>
+        손전등</br>
+        바퀴</br>
+    </div>
+    <div id="a">
+        <h1>남성의류</h1>
+        상의</br>
+        하의</br>
+        신발</br>
+        속옷</br>
+    </div>
+    <div id="b">
+        <h1>여성의류</h1>
+        상의</br>
+        하의</br>
+        신발</br>
+        속옷</br>
+    </div>
+</body>
+</html>
