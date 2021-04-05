@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <style>
+        #x, #y {
+            display: none;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('#c0').change(function () {
+                if (this.checked) {
+                    $('div').children().prop('checked', true);
+                    $('#c1, #c2').trigger('change');
+                } else {
+                    $('div').children().prop('checked', false);
+                    $('#c1, #c2').trigger('change');
+                }
+            })
+            $('#c1').change(function () {
+                if (this.checked) {
+                    $('#x').css('display', 'block');
+                }
+                else {
+                    $('#x').css('display', 'none');
+                }
+            })
+            $('#c2').change(function () {
+                if (this.checked) {
+                    $('#y').css('display', 'block');
+                }
+                else {
+                    $('#y').css('display', 'none');
+                }
+            })
+        });
+    </script>
+</head>
+<body>
+    <div><h1>스프츠/레저 쇼핑</h1></div>
+    <input type="checkbox" id="c0" />모두 선택
+    <div>
+        <input type="checkbox" id="c1" />캠핑
+        <input type="checkbox" id="c2" />수영
+    </div>
+
+    <div id="x">
+        <h1>캠핑</h1>
+        텐트</br>
+        그늘막</br>
+        취사용품</br>
+        랜턴</br>
+    </div>
+    <div id="y">
+        <h1>수영</h1>
+        남성수영복</br>
+        여성수영복</br>
+        비치웨어</br>
+        수영용품</br>
+    </div>
+</body>
+</html>
