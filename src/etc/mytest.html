@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+<style>
+  .ff {display : none}
+</style>
+
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('input').eq('2').css('display','none')
+        $('input').eq('3').css('display','none')
+      });
+
+      function ttt(){
+        $('img').remove();
+        $('div').eq('1').append($('<img src="f.jpg" alt="">'));
+      }
+
+      function tttx(){
+        $('img').remove();
+        $('div').eq('4').append($('<img src="m.jpg" alt="">'));
+      }
+
+      function aaax() {
+        $('div').eq('1').css('display','none');
+        $('input').eq('0').css('display','inline')
+        $('input').eq('2').css('display','none')
+      }
+      function aaa() {
+        $('div').eq('1').css('display','block');
+        $('input').eq('0').css('display','none')
+        $('input').eq('2').css('display','inline')
+      }
+
+      function bbb() {
+        $('div').eq('4').css('display','block');
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <input type="button" name="1" value="개나리 보기" onclick="aaa()">
+      <input type="button" name="2" value="목련 보기" onclick="bbb()">
+      <input type="button" name="1" value="개나리 감추기" onclick="aaax()">
+      <input type="button" name="2" value="목련 감추기" onclick="bbbx()">
+  <div class="ff">
+    <div class="">
+      개나리 <input type="button" name="" value="사진보기" onclick="ttt()">
+    </div>
+    <div class="">
+      연교·신리화라고도 하며, 북한에서는 개나리꽃나무라고 부른다. 산기슭 양지에서 많이 자란다. 높이 약 3m이다. 가지 끝이 밑으로 처지며, 잔가지는 처음에는 녹색이지만 점차 회갈색으로 변하고 껍질눈[皮目]이 뚜렷하게 나타난다. 잎은 마주나고 타원형이며 톱니가 있고 길이 3∼12cm이다. 잎 앞면은 짙은 녹색이고 뒷면은 황록색인데 양쪽 모두 털이 없다. 잎자루는 길이 1∼2cm이다.
+[네이버 지식백과] 개나리 [korean forsythia] (두산백과 두피디아, 두산백과)
+    </div>
+  </div>
+
+
+  <div class="ff">
+    <div class="">
+       목련 <input type="button" name="" value="사진보기" onclick="tttx()">
+    </div>
+    <div class="">
+      연교·신리화라고도 하며, 북한에서는 개나리꽃나무라고 부른다. 산기슭 양지에서 많이 자란다. 높이 약 3m이다. 가지 끝이 밑으로 처지며, 잔가지는 처음에는 녹색이지만 점차 회갈색으로 변하고 껍질눈[皮目]이 뚜렷하게 나타난다. 잎은 마주나고 타원형이며 톱니가 있고 길이 3∼12cm이다. 잎 앞면은 짙은 녹색이고 뒷면은 황록색인데 양쪽 모두 털이 없다. 잎자루는 길이 1∼2cm이다.
+[네이버 지식백과] 개나리 [korean forsythia] (두산백과 두피디아, 두산백과)
+    </div>
+  </div>
+
+
+
+</div>
+  </body>
+</html>
