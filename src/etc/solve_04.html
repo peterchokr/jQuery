@@ -1,0 +1,46 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Document</title>
+<style>
+  .price {
+  padding: 10px;
+  }
+  .qtty {
+    padding: 10px;
+  }
+  .drink span {
+    border: solid 2px black;
+    padding: 3px;
+    margin: 1px;
+  }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+  $(document).ready(function () {
+  $('.drink span').click(function () {
+    var output = "";
+    var qty = $('input[type="number"]').val();
+    var output = "주문하신 "+$(this).text()+" "+$("#qty").val()+"잔의 가격은 "+(qty*1000)+"원 입니다.";
+    $('#out').text(output);
+  });
+});
+</script>
+</head>
+<body>
+<div class="price"><span>가격 : </span><span>1000</span>
+</div>
+<div class="drink">
+  <span>아메리카노</span>
+  <span>라떼</span>
+  <span>과일주스</span>
+</div>
+<div class="qtty">
+  <span>주문수량 : </span>
+  <span><input type="number" id="qty" name="" value="1"></span>
+</div>
+<div id="out">
+
+</div>
+
+</body>
+</html>

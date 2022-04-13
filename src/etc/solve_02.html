@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <title>Document</title>
+    <script>
+        function ttt() {
+            var sum = 0;
+            var price = $('span').eq(1).text();
+            var menu = $('option:selected').val();
+            var cnt = $('input[type="text"]').val();
+
+            sum = eval(price * cnt);
+            $('#out').text(menu + " " + cnt +"잔은 " +sum +"원입니다.");
+        }
+    </script>
+</head>
+<body>
+    <div><span>가격: </span><span id="pr">1000</span>
+    </div>
+    <div>
+        <select name="" id="">
+            <option value="아메리카노">아메리카노</option>
+            <option value="라떼">라떼</option>
+            <option value="과일주스">과일주스</option>
+        </select>
+    </div>
+    <div>
+        <span>주문수량 </span><span><input type="text" size="3"></span>
+    </div>
+    <div>
+        <input type="button" value="주문하기" onclick="ttt()">
+    </div>
+    <div id="out">
+
+    </div>
+</body>
+</html>
