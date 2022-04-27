@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body{
+            margin : 0px;
+        }
+        #i {
+            width:100px;
+            height:200px;
+            left:-75px;
+            background-color:orange;
+            position: relative;
+        }
+        input{
+            float:right;
+        }
+        #y {
+            display : none;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#x').click(function () {
+                $('div').animate({ left: '0' }, 'slow');
+                $('#x').css('display', 'none');
+                $('#y').css('display', 'block');
+
+            });
+            $('#y').click(function () {
+                $('div').animate({ left: '-75' }, 'slow');
+                $('#y').css('display', 'none');
+                $('#x').css('display', 'block');
+
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="i">
+        <div id="j">
+        <input type="button" id="x" value=">>" />
+        <input type="button" id="y" value="<<" />
+            </div>
+        <br />
+        <a href="http://www.naver.com">네이버</a><br />
+        <a href="http://daum.net">다음</a><br />
+        <a href="http://www.google.com">구글</a><br />
+     </div>
+</body>
+</html>
