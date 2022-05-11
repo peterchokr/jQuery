@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+    $(document).ready( function() {
+    	$('#b1').click( function() {
+    		$.ajax({
+    			url: 'b1.xml',
+    			type: 'get',
+    			dataType: 'xml',
+    			timeout: 10000,
+    			success: function(xmlData) {
+    				var s = "";
+    				$(xmlData).find('b').each(function(){
+              s = s + $(this).find('bt').text() +
+              $(this).find('ba').text() + "<br>";
+    				});
+            $('#book').empty();
+            $('#book').append(s);
+    			},
+    			error: function() {
+    				$("#book").html("<p>도서정보가 없습니다.</p>");
+    			}
+    		});
+    	});
+
+
+      $('#b2').click( function() {
+        $.ajax({
+          url: 'b2.xml',
+          type: 'get',
+          dataType: 'xml',
+          timeout: 10000,
+          success: function(xmlData) {
+            var s = "";
+            $(xmlData).find('b').each(function(){
+              s = s + $(this).find('bt').text() +
+              $(this).find('ba').text() + "<br>";
+            });
+            $('#book').empty();
+            $('#book').append(s);
+          },
+          error: function() {
+            $("#book").html("<p>도서정보가 없습니다.</p>");
+          }
+        });
+      });
+
+
+      $('#b3').click( function() {
+        $.getJSON('b3.json', function(jsonData) {
+          var s = "";
+          $.each(jsonData.b, function() {
+            s = s + this.bt + this.ba + "<br>";
+          });
+          $('#book').empty();
+          $('#book').append(s);
+        });
+      });
+
+
+    });
+    </script>
+
+  </head>
+  <body>
+    <h1>도서정보</h1>
+    <button id="b1">YES24</button>
+    <button id="b2">교보문고</button>
+    <button id="b3">알라딘</button>
+    <div id="book">
+
+    </div>
+  </body>
+</html>
