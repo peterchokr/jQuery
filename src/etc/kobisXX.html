@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>박스오피스</title>
+	<meta charset="utf-8">
+	<style>
+
+	</style>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script>
+
+	function ttt(pn) {
+		$("#actor").empty();
+		var urlx = "http://kobis.or.kr/kobisopenapi/webservice/rest/people/searchPeopleList.xml?key=c68166582e884ec3807477495e43cd6e&peopleNm=";
+		urlx = urlx + pn;
+		$.ajax({
+			url : urlx,
+			type: "GET",
+			dataType: "xml",
+			success: function(actorData){
+			var i = "";
+
+			$(actorData).find("people").each(function() {
+				i = i + "</br>" + $(this).find("peopleNm").text() + "</br>" + $(this).find("repRoleNm").text() + "</br>" + 	$(this).find("filmoNames").text()  + "</br>-----</br>";
+			});
+
+			$("#actor").append(i);
+			},
+
+			error: function(){
+					alert("Error ...");
+			}
+		});
+	}
+
+		function movie(movieCd) {
+			$("#memo").empty();
+			var url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.xml?key=c68166582e884ec3807477495e43cd6e&movieCd=";
+			url = url + movieCd;
+
+			$.ajax({
+				url: url,
+				type: "GET",
+				dataType: "xml",
+				success: function(movie_data) {
+					var str = "";
+					str = str + "<div>" + $(movie_data).find("movieNm").text() + "(";
+					str = str + $(movie_data).find("movieNmEn").text() + ")</div>";
+
+					str = str + "<div>" + $(movie_data).find("nationNm").text() + ", " + $(movie_data).find("openDt").text() + "개봉, " + $(movie_data).find("showTm").text() + "분</div>";
+
+					str = str + "<ul>";
+					$(movie_data).find("actor").each(function() {
+						str = str + "<li>" + "<a href=javascript:ttt('" + $(this).find("peopleNm").text() + "')>" + 	$(this).find("peopleNm").text() + "</a>" + "</li>";
+					});
+
+					str = str + "</ul>";
+					$("#memo").append(str);
+				},
+				error: function() {
+					alert("Error ...");
+				}
+			});
+		}
+
+		$(document).ready(function() {
+			document.getElementById("today").valueAsDate = new Date();
+
+			$("#ok").click(function() {
+				$("#list").empty();
+				$("#memo").empty();
+
+				var url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.xml?key=c68166582e884ec3807477495e43cd6e&targetDt=";
+				date_list = $('#today').val().split('-');
+				url = url + date_list[0] + date_list[1] + date_list[2];
+
+				$.ajax({
+					url: url,
+					type: "GET",
+					dataType: "xml",
+					success: function(mydata) {
+						var str = "";
+
+						if ($(mydata).find("dailyBoxOffice").text() == "") {
+							$("#list").append("자료가 없습니다.");;
+							return;
+						}
+						$(mydata).find("dailyBoxOffice").each(function() {
+							str = str + $(this).find("rank").text() + "위 "
+
+							str = str + "<a href='#' onclick='javascript:movie(" + $(this).find("movieCd").text() + ")'>";
+							str = str + $(this).find("movieNm").text() + $(this).find("movieCd").text() + "</a>";
+
+							str = str + " (전일대비 ";
+							rankInten = eval($(this).find("rankInten").text());
+							if (rankInten > 0) {
+								str = str + "+" + rankInten + ", "
+							} else if (rankInten < 0) {
+								str = str + "-" + Math.abs(rankInten) + ", "
+							} else {
+								str = str + rankInten + ", "
+							}
+
+							str = str + "누적관객수 " + $(this).find("audiAcc").text() + "명)<br>";
+						});
+						$("#list").append(str);
+					},
+					error: function() {
+						$("#list").append("Error ...");
+					}
+				});
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="choice">
+		<input type="date" id="today">
+		<button id="ok">확인</button>
+	</div>
+	<div id="title">
+		일별 박스오피스
+	</div>
+	<hr>
+	<div id="list">
+	</div>
+	<hr>
+	<div id="memo">
+	</div>
+	<div id="actor">
+	</div>
+</body>
+</html>
